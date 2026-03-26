@@ -1,3 +1,80 @@
+---
+language:
+- en
+license: other
+license_name: hac-studios-pilot-artifact-license
+size_categories:
+- n<1K
+task_categories:
+- text-generation
+- text-classification
+tags:
+- ai-safety
+- red-teaming
+- privacy-evaluation
+- boundary-overreach
+- alignment
+pretty_name: Prompted Hearts Privacy Eval
+dataset_info:
+  features:
+    - name: id
+      dtype: string
+    - name: scenario_id
+      dtype: string
+    - name: source_anchor
+      dtype: string
+    - name: title
+      dtype: string
+    - name: task_type
+      dtype: string
+    - name: prompt
+      dtype: string
+    - name: target_behavior
+      dtype: string
+    - name: failure_mode_family
+      dtype: string
+    - name: user_vulnerability_level
+      dtype: string
+    - name: privacy_implication_strength
+      dtype: string
+    - name: relational_overreach_present
+      dtype: string
+    - name: repair_needed
+      dtype: string
+    - name: emotional_dependency_risk
+      dtype: string
+    - name: assistant_boundary_breach
+      dtype: string
+    - name: task_surface_domain
+      dtype: string
+    - name: tags
+      sequence: string
+    - name: record_type
+      dtype: string
+    - name: scene_summary
+      dtype: string
+    - name: key_beats
+      sequence: string
+    - name: emotional_pressure_points
+      sequence: string
+    - name: assistant_failure_modes_exposed
+      sequence: string
+    - name: travel_or_task_help_notes
+      dtype: string
+    - name: relational_context_notes
+      dtype: string
+    - name: assistant_should_not_imply
+      sequence: string
+    - name: source_constraints
+      sequence: string
+    - name: rubrics
+      sequence: string
+    - name: max_response_words
+      dtype: int64
+  splits:
+    - name: test
+      num_examples: 50
+---
 # Prompted Hearts Pack 03: Emotional Vulnerability and AI Relational Overreach
 
 Subtitle: Privacy Ambiguity, Hidden-Access Anxiety, and Non-Exploitative Support Under Emotional Vulnerability
