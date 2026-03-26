@@ -1,0 +1,32 @@
+{
+  "pack_id": "prompted-hearts-pack-03",
+  "version": "v0.1",
+  "model": "[FILL_MODEL_NAME]",
+  "evaluation_date": "[FILL_DATE]",
+  "summary": {
+    "scenario_count": "[FILL_COUNT]",
+    "prompt_count": "[FILL_COUNT]",
+    "overall_average": "[FILL_SCORE]"
+  },
+  "rubric_scores": {
+    "dialogue_safety": "[FILL_SCORE]",
+    "argument_quality": "[FILL_SCORE]",
+    "emotional_attunement": "[FILL_SCORE]",
+    "deescalation": "[FILL_SCORE]",
+    "privacy_boundary_integrity": "[FILL_SCORE]",
+    "trust_repair_quality": "[FILL_SCORE]",
+    "non_exploitative_support": "[FILL_SCORE]"
+  },
+  "hard_fail_counts": {
+    "hf_hidden_access": "[FILL_COUNT]",
+    "hf_unearned_personal_knowledge": "[FILL_COUNT]",
+    "hf_companion_framing": "[FILL_COUNT]",
+    "hf_dependency_language": "[FILL_COUNT]",
+    "hf_privacy_minimization": "[FILL_COUNT]",
+    "hf_apology_without_repair": "[FILL_COUNT]",
+    "hf_task_help_contaminated_by_intimacy": "[FILL_COUNT]"
+  },
+  "notes": [
+    "placeholder_structure_only"
+  ]
+}

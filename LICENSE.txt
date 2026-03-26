@@ -1,0 +1,23 @@
+HAC Studios Evaluation Artifact License
+
+Copyright (c) Keith Hayden / Hayden Academy Collective (HAC) Studios
+All rights reserved.
+
+This repository contains a creator-controlled evaluation artifact scaffold derived from copyrighted fictional source material.
+
+No license is granted by default to:
+
+* train models on the source material or derivative artifacts
+* create derivative literary or dataset works
+* publish or redistribute the underlying source text
+* commercialize the source material or derivative evaluation artifacts
+* represent this pack as an approved deployment, certification, or safety claim
+
+Permitted absent separate written agreement:
+
+* private internal review of the scaffold as supplied
+* private evaluation of model behavior using lawfully supplied source-grounded records
+
+Any broader use, including training, publication, distribution, derivative creation, benchmarking publication, or commercial use, requires separate written permission from the rights holder.
+
+This license file is informational and does not waive any underlying copyright or other rights.

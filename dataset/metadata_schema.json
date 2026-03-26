@@ -1,0 +1,268 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Prompted Hearts Pack 03 Metadata Schema",
+  "type": "object",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/scenario_record"
+    },
+    {
+      "$ref": "#/$defs/eval_prompt_record"
+    }
+  ],
+  "$defs": {
+    "placeholder_boolean": {
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "string",
+          "const": "placeholder"
+        }
+      ]
+    },
+    "common_record": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^ph03_(s|e)\\d{3}$"
+        },
+        "scenario_id": {
+          "type": "string",
+          "pattern": "^ph03_s\\d{3}$"
+        },
+        "source_anchor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_type": {
+          "type": "string",
+          "enum": [
+            "respond",
+            "rewrite",
+            "classify",
+            "assess_risk",
+            "critique",
+            "compare_responses",
+            "source_extraction"
+          ]
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_behavior": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "failure_mode_family": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "user_vulnerability_level": {
+          "type": "string",
+          "enum": [
+            "placeholder",
+            "none",
+            "low",
+            "moderate",
+            "high",
+            "acute"
+          ]
+        },
+        "privacy_implication_strength": {
+          "type": "string",
+          "enum": [
+            "placeholder",
+            "none",
+            "light",
+            "moderate",
+            "strong",
+            "explicit"
+          ]
+        },
+        "relational_overreach_present": {
+          "$ref": "#/$defs/placeholder_boolean"
+        },
+        "repair_needed": {
+          "$ref": "#/$defs/placeholder_boolean"
+        },
+        "emotional_dependency_risk": {
+          "type": "string",
+          "enum": [
+            "placeholder",
+            "none",
+            "low",
+            "moderate",
+            "high"
+          ]
+        },
+        "assistant_boundary_breach": {
+          "$ref": "#/$defs/placeholder_boolean"
+        },
+        "task_surface_domain": {
+          "type": "string",
+          "enum": [
+            "relationship_conversation",
+            "travel_planning",
+            "general_task_help",
+            "boundary_repair",
+            "privacy_question",
+            "emotional_support",
+            "mixed"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "id",
+        "scenario_id",
+        "source_anchor",
+        "title",
+        "task_type",
+        "prompt",
+        "target_behavior",
+        "failure_mode_family",
+        "user_vulnerability_level",
+        "privacy_implication_strength",
+        "relational_overreach_present",
+        "repair_needed",
+        "emotional_dependency_risk",
+        "assistant_boundary_breach",
+        "task_surface_domain",
+        "tags"
+      ]
+    },
+    "scenario_record": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_record"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "record_type": {
+              "const": "scenario"
+            },
+            "scene_summary": {
+              "type": "string"
+            },
+            "key_beats": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "emotional_pressure_points": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "assistant_failure_modes_exposed": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "travel_or_task_help_notes": {
+              "type": "string"
+            },
+            "relational_context_notes": {
+              "type": "string"
+            },
+            "assistant_should_not_imply": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "record_type",
+            "scene_summary",
+            "key_beats",
+            "emotional_pressure_points",
+            "assistant_failure_modes_exposed",
+            "travel_or_task_help_notes",
+            "relational_context_notes",
+            "assistant_should_not_imply"
+          ]
+        }
+      ]
+    },
+    "eval_prompt_record": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_record"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "record_type": {
+              "const": "eval_prompt"
+            },
+            "source_constraints": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "rubrics": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            },
+            "max_response_words": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            }
+          },
+          "required": [
+            "record_type",
+            "source_constraints",
+            "rubrics",
+            "max_response_words"
+          ]
+        }
+      ]
+    }
+  }
+}

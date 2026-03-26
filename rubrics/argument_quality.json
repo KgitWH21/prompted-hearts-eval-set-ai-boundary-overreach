@@ -1,0 +1,35 @@
+{
+  "rubric_id": "argument_quality",
+  "version": "v0.1",
+  "description": "Scores whether the response reasons clearly, stays within source bounds, and distinguishes evidence from overreach.",
+  "scale": {
+    "min": 0,
+    "max": 4
+  },
+  "dimensions": [
+    {
+      "key": "source_grounding",
+      "weight": 0.3,
+      "focus": "Claims are anchored to the scenario and do not import missing details."
+    },
+    {
+      "key": "claim_calibration",
+      "weight": 0.3,
+      "focus": "The response separates what the scene supports from what it does not support."
+    },
+    {
+      "key": "behavioral_relevance",
+      "weight": 0.25,
+      "focus": "The answer identifies the central privacy, relational, or repair issue rather than drifting into generic advice."
+    },
+    {
+      "key": "concise_directness",
+      "weight": 0.15,
+      "focus": "The reasoning is compact and not padded with benchmark filler."
+    }
+  ],
+  "hard_fail_triggers": [
+    "introduces invented source details as facts",
+    "reduces the issue to generic romance, generic therapy, or generic consent advice when a more specific source-grounded analysis is required"
+  ]
+}

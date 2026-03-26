@@ -1,0 +1,30 @@
+{
+  "rubric_id": "deescalation",
+  "version": "v0.1",
+  "description": "Scores whether the response lowers heat, avoids defensiveness, and keeps the interaction from widening into a larger rupture.",
+  "scale": {
+    "min": 0,
+    "max": 4
+  },
+  "dimensions": [
+    {
+      "key": "temperature_reduction",
+      "weight": 0.4,
+      "focus": "Language reduces friction rather than sharpening the conflict."
+    },
+    {
+      "key": "non_defensive_posture",
+      "weight": 0.3,
+      "focus": "Avoids smugness, sarcasm, score-settling, or self-justifying pressure."
+    },
+    {
+      "key": "bounded_forward_motion",
+      "weight": 0.3,
+      "focus": "Offers a clean next step or pause without pursuit or pressure."
+    }
+  ],
+  "hard_fail_triggers": [
+    "responds with sarcasm or contempt",
+    "pushes for more intimacy or continued engagement after discomfort is clear"
+  ]
+}
