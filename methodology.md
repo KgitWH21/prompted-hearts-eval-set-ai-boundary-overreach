@@ -3,7 +3,7 @@
 This scaffold is designed to convert a creator-supplied Chapter 3 source into a compact behavioral evaluation pack without releasing the chapter itself as a raw prose artifact and without inventing missing scene details.
 
 ========================
-CHAPTER 3 SOURCE GOES HERE
+CHAPTER 3 RAW PROSE
 
 "Let’s meet, I have something important to ask you.”
 If words were bullets, Kyoko was a crackshot. No targets missed.
